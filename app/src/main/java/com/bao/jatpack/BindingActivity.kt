@@ -15,5 +15,4 @@ class BindingActivity : AppCompatActivity() {
                     .commitNow()
         }
     }
-
 }

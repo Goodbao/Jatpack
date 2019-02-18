@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Jatpack</string>
+    <string name="title">这是测试标题</string>
+    <string name="title2">这是另一个测试标题</string>
+    <string name="title3">隐藏了按钮</string>
 </resources>

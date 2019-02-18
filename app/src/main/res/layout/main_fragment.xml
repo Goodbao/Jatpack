@@ -8,25 +8,38 @@
         <!-- 绑定viewModel -->
         <variable
             name="viewModel"
-            type="com.bao.jatpack.ui.main.MainViewModel"/>
+            type="com.bao.jatpack.ui.main.MainViewModel" />
     </data>
 
-    <android.support.constraint.ConstraintLayout
+    <LinearLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context=".ui.main.MainFragment">
 
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textSize="30sp"
-    android:text="@{viewModel.message}"
-    android:onClick="@{view -> viewModel.setMessage()}"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{view -> viewModel.setMessage()}"
+            android:text="@{viewModel.message}"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </android.support.constraint.ConstraintLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{view -> viewModel.startActivity()}"
+            android:text="跳转" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="跳转2" />
+
+    </LinearLayout>
 </layout>

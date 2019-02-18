@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <!-- view的visible需要View类支持 -->
+        <import type="android.view.View" />
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="background"
+            type="android.graphics.drawable.Drawable" />
+
+        <variable
+            name="visible"
+            type="java.lang.Boolean" />
+
+        <variable
+            name="resId"
+            type="android.graphics.drawable.Drawable" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@{background}"
+        android:orientation="vertical">
+
+        <!-- default是开发时看的，真正运行时看不到 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{title,default = `大包子`}"
+            android:textSize="30sp" />
+
+        <!-- visible属性用boolean来控制 -->
+        <ImageView
+            android:id="@+id/imgClose"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@{resId ?? @drawable/ic_star_black , default = @drawable/ic_star_black}"
+            android:visibility="@{visible ? View.VISIBLE : View.INVISIBLE , default = visible}" />
+
+    </LinearLayout>
+</layout>
